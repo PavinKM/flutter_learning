@@ -291,23 +291,33 @@ class SecondAppState extends State<SecondApp>{
   String displayText = "Pavin";
   @override
   Widget build(BuildContext context) {
-      return(MaterialApp(
-          home: Scaffold(
-            appBar: AppBar(
-              title: Text('Change to bye'),
-            ),
-            body: Column(
-              children: [
-                Text(displayText),
-                MaterialButton(onPressed: (){
-                  setState(() {
-                     displayText = "Power";
-                  });
-                }, child: Text('Click'),
-                )
-              ],
-            ),
-        ))
+      // return(MaterialApp(
+      //     home: Scaffold(
+      //       appBar: AppBar(
+      //         title: Text('Change to bye'),
+      //       ),
+      //       body: Column(
+      //         children: [
+      //           Text(displayText),
+      //           MaterialButton(onPressed: (){
+      //             setState(() {
+      //                displayText = "Power";
+      //             });
+      //           }, child: Text('Click'),
+      //           )
+      //         ],
+      //       ),
+      //   ))
+      // );
+      return MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(title: Text('ListView Builder'),),
+          body: ListView.builder(
+            itemCount: 10, //fr.length
+            itemBuilder: (context, index){
+              return Text('Hello' + index.toString());  //Text(fr[index])
+              })
+        ),
       );
   }
 }
